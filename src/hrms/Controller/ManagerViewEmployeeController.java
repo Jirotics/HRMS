@@ -4,6 +4,7 @@
 package hrms.Controller;
 
 import hrms.HRMS;
+import hrms.Model.Application;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -50,6 +51,8 @@ public class ManagerViewEmployeeController implements Initializable {
 	@FXML
 	private Parent root = null;
 
+        Application app = new Application();
+        
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		// TODO
@@ -62,6 +65,8 @@ public class ManagerViewEmployeeController implements Initializable {
 	private void handleButtonAction(ActionEvent event) throws IOException {
 		// if logout button selected
 		if (event.getSource() == logOutButton) {
+                    
+                        app.setEmp(true);
 			// get reference to the button's stage
 			stage = (Stage) logOutButton.getScene().getWindow();
 			// load up OTHER FXML document
